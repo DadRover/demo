@@ -1,0 +1,8 @@
+E:\Projects\C#\HomeWork2\HomeWork2\HomeWork2\bin\Debug\HomeWork2.exe.config
+E:\Projects\C#\HomeWork2\HomeWork2\HomeWork2\bin\Debug\HomeWork2.exe
+E:\Projects\C#\HomeWork2\HomeWork2\HomeWork2\bin\Debug\HomeWork2.pdb
+E:\Projects\C#\HomeWork2\HomeWork2\HomeWork2\obj\Debug\HomeWork2.csproj.AssemblyReference.cache
+E:\Projects\C#\HomeWork2\HomeWork2\HomeWork2\obj\Debug\HomeWork2.csproj.SuggestedBindingRedirects.cache
+E:\Projects\C#\HomeWork2\HomeWork2\HomeWork2\obj\Debug\HomeWork2.csproj.CoreCompileInputs.cache
+E:\Projects\C#\HomeWork2\HomeWork2\HomeWork2\obj\Debug\HomeWork2.exe
+E:\Projects\C#\HomeWork2\HomeWork2\HomeWork2\obj\Debug\HomeWork2.pdb
