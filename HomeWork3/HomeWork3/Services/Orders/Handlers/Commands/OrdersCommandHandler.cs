@@ -12,6 +12,8 @@ namespace HomeWork3.Services.Orders.Handlers.Commands
         {
             _eventRepository = eventRepository;
         }
+
+        ///<inheritdoc/>
         public int Handel(CreateOrderCommand command)
         {
             var orderId = _eventRepository.GetNextId();
@@ -20,6 +22,7 @@ namespace HomeWork3.Services.Orders.Handlers.Commands
             return orderId;
         }
 
+        ///<inheritdoc/>
         public void Handel(AddProductsToOrderCommand command)
         {
             foreach (var product in command.Products)
@@ -30,6 +33,7 @@ namespace HomeWork3.Services.Orders.Handlers.Commands
             }
         }
 
+        ///<inheritdoc/>
         public void Handel(CompleteOrderCommand command)
         {
             var orderCompletedEvent = new OrderCompletedEvent(command.OrderId);

@@ -1,11 +1,18 @@
-﻿namespace HomeWork3.Services.Orders.Contracts.Commands;
-
-internal class CompleteOrderCommand
+﻿namespace HomeWork3.Services.Orders.Contracts.Commands
 {
-    public int OrderId { get; }
-
-    public CompleteOrderCommand(int orderId)
+    /// <summary>
+    /// Команда завершения Заказа
+    /// </summary>
+    internal class CompleteOrderCommand
     {
-        OrderId = orderId;
+        /// <summary>
+        /// Идентификатор Заказа
+        /// </summary>
+        public int OrderId { get; }
+
+        public CompleteOrderCommand(int orderId)
+        {
+            OrderId = orderId;
+        }
     }
 }

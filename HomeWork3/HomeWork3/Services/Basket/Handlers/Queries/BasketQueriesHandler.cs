@@ -13,9 +13,11 @@ namespace HomeWork3.Services.Basket.Handlers.Queries
             _basketRepository = basketRepository;
         }
 
+        ///<inheritdoc/>
         public Product[] Handel(GetBasketQuery command) =>
             _basketRepository.GetBasket();
 
+        ///<inheritdoc/>
         public decimal Handel(GetCostBasketQuery command) =>
             _basketRepository.GetCostBasket();
     }

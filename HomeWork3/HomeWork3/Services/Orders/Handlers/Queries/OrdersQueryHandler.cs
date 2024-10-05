@@ -15,12 +15,14 @@ namespace HomeWork3.Services.Orders.Handlers.Queries
             _eventRepository = eventRepository;
         }
 
+        ///<inheritdoc/>
         public OrderDto Handel(GetOrderByIdQuery command) =>
             GetOrderById(command.OrderId);
 
+        ///<inheritdoc/>
         public OrderDto[] Handel(GetOrdersQuery command)
         {
-            var orderIds = _eventRepository.GetAllIds();
+            var orderIds = _eventRepository.GetAllOrderIds();
             List<OrderDto> orderDto = new List<OrderDto>();
             foreach (var orderId in orderIds)
             {

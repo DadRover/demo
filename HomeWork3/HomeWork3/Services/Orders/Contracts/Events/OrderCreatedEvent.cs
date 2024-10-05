@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HomeWork3.Services.Orders.Contracts.Events
+﻿namespace HomeWork3.Services.Orders.Contracts.Events
 {
+    /// <summary>
+    /// Событие создания Заказа
+    /// </summary>
     internal class OrderCreatedEvent : OrderEvent
     {
+        /// <summary>
+        /// Заказчик
+        /// </summary>
         public string CustomerName { get; }
 
         public OrderCreatedEvent(int orderId, string customerName)

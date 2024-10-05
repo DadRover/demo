@@ -10,6 +10,9 @@ namespace HomeWork3.Services.Basket.Handlers.Commands
 
     internal class BasketCommandsHandler : IBasketCommandsHandler
     {
+        /// <summary>
+        /// Хардкод на цены
+        /// </summary>
         private static readonly Dictionary<string, decimal> Products = new()
         {
             { "Салат", 20.2m },
@@ -25,16 +28,20 @@ namespace HomeWork3.Services.Basket.Handlers.Commands
             _orderService = orderService;
             _repository = repository;
         }
+
+        ///<inheritdoc/>
         public void Handel(AddProductCommand command)
         {
             _repository.Add(new Product(command.ProductName, Products[command.ProductName]));
         }
 
+        ///<inheritdoc/>
         public void Handel(RemoveProductCommand command)
         {
             _repository.Remove(command.ProductName);
         }
 
+        ///<inheritdoc/>
         public void Handel(SendOrderCommand command)
         {
             

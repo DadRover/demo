@@ -1,9 +1,8 @@
-﻿using HomeWork3.Services.Basket.Handlers.Commands;
-using HomeWork3.Services.Basket.Handlers.Queries;
-using System.Collections.Generic;
-using HomeWork3.Services.Basket.Contracts;
+﻿using HomeWork3.Services.Basket.Contracts;
 using HomeWork3.Services.Basket.Contracts.Commands;
 using HomeWork3.Services.Basket.Contracts.Queries;
+using HomeWork3.Services.Basket.Handlers.Commands;
+using HomeWork3.Services.Basket.Handlers.Queries;
 
 namespace HomeWork3.Services.Basket.Services
 {
@@ -18,18 +17,24 @@ namespace HomeWork3.Services.Basket.Services
             _commandHandler = basketCommandsHandler;
             _queryHandler = basketQueriesHandler;
         }
+
+        ///<inheritdoc/>
         public void Add(AddProductCommand command) =>
             _commandHandler.Handel(command);
 
+        ///<inheritdoc/>
         public void Remove(RemoveProductCommand command) =>
             _commandHandler.Handel(command);
 
+        ///<inheritdoc/>
         public void SendOrder(SendOrderCommand command) =>
             _commandHandler.Handel(command);
 
+        ///<inheritdoc/>
         public Product[] GetBasket(GetBasketQuery command) =>
             _queryHandler.Handel(command);
 
+        ///<inheritdoc/>
         public decimal GetCostBasket(GetCostBasketQuery command) =>
             _queryHandler.Handel(command);
     }
