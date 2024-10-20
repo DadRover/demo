@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+п»їusing Microsoft.AspNetCore.Mvc;
 using Notifications.Services;
 using ServiceOrder.Contracts;
 
@@ -46,7 +46,7 @@ namespace ServiceA.Controllers
 
             if (productQueue == null)
             {
-                _logger.LogInformation($"{DateTime.Now}: На продукт {product} нет желающих.");
+                _logger.LogInformation($"{DateTime.Now}: РќР° РїСЂРѕРґСѓРєС‚ {product} РЅРµС‚ Р¶РµР»Р°СЋС‰РёС….");
             }
             else
             {
