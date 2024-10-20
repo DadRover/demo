@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+п»їusing Microsoft.AspNetCore.Mvc;
 using Notifications.Services;
 using Orchestrator.Contracts;
 
@@ -19,16 +19,16 @@ namespace Orchestrator.Controllers
             _logger = logger;
             _queue = new List<ProductQueue>();
 
-            _notificationService = NotificationService.GetInstance("http://localhost:8081/"); // предположим на этом урле будет сервис нотификации
-            _orderServiceA = OrderService.GetInstance("http://localhost:8082/");// предположим на этом урле будет сервис мониторинга A
-            _orderServiceB = OrderService.GetInstance("http://localhost:8083/");// предположим на этом урле будет сервис мониторинга B
+            _notificationService = NotificationService.GetInstance("http://localhost:8081/"); // РїСЂРµРґРїРѕР»РѕР¶РёРј РЅР° СЌС‚РѕРј СѓСЂР»Рµ Р±СѓРґРµС‚ СЃРµСЂРІРёСЃ РЅРѕС‚РёС„РёРєР°С†РёРё
+            _orderServiceA = OrderService.GetInstance("http://localhost:8082/");// РїСЂРµРґРїРѕР»РѕР¶РёРј РЅР° СЌС‚РѕРј СѓСЂР»Рµ Р±СѓРґРµС‚ СЃРµСЂРІРёСЃ РјРѕРЅРёС‚РѕСЂРёРЅРіР° A
+            _orderServiceB = OrderService.GetInstance("http://localhost:8083/");// РїСЂРµРґРїРѕР»РѕР¶РёРј РЅР° СЌС‚РѕРј СѓСЂР»Рµ Р±СѓРґРµС‚ СЃРµСЂРІРёСЃ РјРѕРЅРёС‚РѕСЂРёРЅРіР° B
 
             _queue = new List<ProductQueue>();
 
         }
 
         /// <summary>
-        /// Метод добавления нового пользователя в очередь на мониторин продукта
+        /// РњРµС‚РѕРґ РґРѕР±Р°РІР»РµРЅРёСЏ РЅРѕРІРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІ РѕС‡РµСЂРµРґСЊ РЅР° РјРѕРЅРёС‚РѕСЂРёРЅ РїСЂРѕРґСѓРєС‚Р°
         /// </summary>
         /// <param name="userOrder"></param>
         [HttpGet(Name = "add-user")]
@@ -51,7 +51,7 @@ namespace Orchestrator.Controllers
         }
 
         /// <summary>
-        /// Метод обновления очереди от сервиса мониторига
+        /// РњРµС‚РѕРґ РѕР±РЅРѕРІР»РµРЅРёСЏ РѕС‡РµСЂРµРґРё РѕС‚ СЃРµСЂРІРёСЃР° РјРѕРЅРёС‚РѕСЂРёРіР°
         /// </summary>
         /// <param name="userOrder"></param>
         [HttpGet(Name = "user-is-order")]
@@ -61,7 +61,7 @@ namespace Orchestrator.Controllers
 
             if (productQueue == null)
             {
-                _logger.LogInformation($"{DateTime.Now}: В очереди нет продукта {userOrder.Product}.");
+                _logger.LogInformation($"{DateTime.Now}: Р’ РѕС‡РµСЂРµРґРё РЅРµС‚ РїСЂРѕРґСѓРєС‚Р° {userOrder.Product}.");
             }
             else
             {
@@ -70,7 +70,7 @@ namespace Orchestrator.Controllers
                 productQueue.UserIds.Remove(userOrder.UserId);
                 productQueue.UserIds.Add(userOrder.UserId);
 
-                _logger.LogInformation($"{DateTime.Now}: Пользователь {userOrder.UserId} отправлен в конец очереди на продукт {userOrder.Product}.");
+                _logger.LogInformation($"{DateTime.Now}: РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ {userOrder.UserId} РѕС‚РїСЂР°РІР»РµРЅ РІ РєРѕРЅРµС† РѕС‡РµСЂРµРґРё РЅР° РїСЂРѕРґСѓРєС‚ {userOrder.Product}.");
 
                 _orderServiceA.SendNewQueue(productQueue);
                 _orderServiceB.SendNewQueue(productQueue);

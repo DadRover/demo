@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+п»їusing Microsoft.AspNetCore.Mvc;
 
 namespace Notifications.Controllers
 {
@@ -14,13 +14,13 @@ namespace Notifications.Controllers
         }
 
         /// <summary>
-        /// Метод уведомления
+        /// РњРµС‚РѕРґ СѓРІРµРґРѕРјР»РµРЅРёСЏ
         /// </summary>
         /// <param name="message"></param>
         [HttpPost(Name = "send-message")]
         public void SendMessage(Message message)
         {
-            _logger.LogInformation($"{DateTime.Now}: Уведомляем пользователя {message.UserId} о заказе продукта {message.ProductName}.");
+            _logger.LogInformation($"{DateTime.Now}: РЈРІРµРґРѕРјР»СЏРµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ {message.UserId} Рѕ Р·Р°РєР°Р·Рµ РїСЂРѕРґСѓРєС‚Р° {message.ProductName}.");
         }
     }
 }
