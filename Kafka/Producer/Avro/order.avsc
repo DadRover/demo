@@ -1,0 +1,11 @@
+{
+  "namespace" : "avro",
+  "type": "record",
+  "name": "Order",
+  "fields": [
+    {"name": "order_id", "type": "int"},
+    {"name": "dishes", "type": "string"},
+    {"name": "total_cost", "type": { "type": "bytes", "logicalType": "decimal", "precision": 16, "scale": 4,}},
+    {"name": "created_at", "type": { "type": "long", "logicalType": "timestamp-millis"}}
+  ]
+}
